@@ -2,11 +2,16 @@
    font-family: sans-serif; 
 }
 
-#timer {
-float: right;
-font-size: 20px;
-font-weight: bold;
+h1 {
+    margin-left: 10px;
+}
 
+p {
+    margin-left: 10px; 
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 #startBtn {
@@ -19,7 +24,13 @@ font-weight: bold;
     color: white;
     font-size: 16px;
     margin: 4px 10px 50px;
-    border-radius: 5px;
+    border-radius: 5px;   
+}
+
+#timer {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .quiz_box {
@@ -29,6 +40,14 @@ font-weight: bold;
     border-radius: 5px;
     background-color: #4CAF50;
     padding: 10px;
-    margin: 10px;
-        
+    margin: 10px;       
 }
+.question{
+    font-size: 25px;
+    font-weight: 600;
+}
+.options{
+    padding: 20px 0px;
+    display: block;   
+}
+

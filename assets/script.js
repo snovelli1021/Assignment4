@@ -1,6 +1,15 @@
-const startBtn = document.querySelector("#startBtn");
-const quiz_box = document.querySelector(".quiz_box");
-let timerEl = document.getElementById('timer');
+var startBtn = document.querySelector("#startBtn");
+var question = document.querySelector(".question");
+var options = document.querySelector(".options");
+var timerEl = document.getElementById('timer');
+
+
+startBtn.onclick = ()=>{
+    countdown();
+    showQuetions();
+}
+
+
 
 //Coundown timer. Does not reduce time if wrong choice yet.
 function countdown() {
@@ -18,7 +27,9 @@ function countdown() {
         displayMessage();
       }
     }, 1000);
-  }
+}
   
-  countdown();
-
+function showQuetions() {
+    var question = document.querySelector(".question");
+  
+}   
