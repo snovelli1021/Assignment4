@@ -28,9 +28,13 @@ button:hover {
 }
 
 #timer {
-    float: right;
+    display: inline;
     font-size: 20px;
     font-weight: bold;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    padding: 20px;
 }
 
 .quiz_box {
@@ -46,8 +50,28 @@ button:hover {
     font-size: 25px;
     font-weight: 600;
 }
+
 .options{
-    padding: 20px 0px;
-    display: block;   
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
 }
 
+#nextBtn {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-size: 16px;
+    margin: 4px 10px 50px;
+    border-radius: 5px;
+    float: right;
+}
