@@ -15,13 +15,12 @@ button:hover {
 }
 
 #startBtn {
-    background-color: #4CAF50;
-    border: none;
+    background-color: #468aca;
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 10px 10px;
     text-decoration: none;
     display: inline-block;
-    color: white;
+    color: black;
     font-size: 16px;
     margin: 4px 10px 50px;
     border-radius: 5px;   
@@ -38,7 +37,7 @@ button:hover {
 }
 
 .quiz_box {
-    width: 800px;
+    width: 900px;
     height: 600px;
     border: 5px black;
     border-radius: 5px;
@@ -51,27 +50,56 @@ button:hover {
     font-weight: 600;
 }
 
-.options{
+div.options {
     border-radius: 5px;
     padding: 8px 15px;
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 15px;
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;  
 }
 
 #nextBtn {
-    background-color: white;
-    border: none;
+    background-color:#468aca;
     border-radius: 5px;
-    padding: 15px 20px;
-    text-decoration: none;
-    display: inline-block;
     color: black;
-    font-size: 16px;
-    margin: 4px 10px 50px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-align: center;
+    float: right;
+}
+
+.card {
+    background-color: #fff;
     border-radius: 5px;
+    margin: 2%;
+    margin-top: 36%;
+    padding: 10px;
+    width: 45%;
+    display: inline-block; 
+}
+
+.cardResults {
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 2%;
+    margin-top: 36%;
+    padding: 10px;
+    width: 5%;
+    display: flex;
+    float: right; 
+}
+  
+
+#submitBtn {
+    background-color:#468aca;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 10px;
+    text-align: center;
     float: right;
 }

@@ -2,7 +2,10 @@ var startBtn = document.querySelector("#startBtn");
 var question = document.querySelector(".question");
 var options = document.querySelector(".options");
 var timerEl = document.getElementById("timer");
-var nextBtn =  document.getElementById("#nextBtn");
+var nextBtn =  document.getElementById("nextBtn");
+var index = 0;
+var submitBtn = document.getElementById("submitBtn");
+
 
 // creating an array and passing the number, questions, options, and answers
 let questionsArr = [
@@ -58,7 +61,7 @@ let questionsArr = [
       "Content, Box, Canvas, Border",
       "Content, Padding, Border, Margin",
       "Margin, Border, Padding, Content",
-      "Height, Width: Background, Border",
+      "Height, Width, Background, Border",
     ]
   },
 ];
@@ -75,7 +78,8 @@ let questionsArr = [
    // }
 //}
 
-startBtn.onclick = ()=>{
+startBtn.onclick = (event)=>{
+    event.preventDefault();
     countdown();
     showQuestions();
 }
@@ -94,24 +98,47 @@ function countdown() {
       } else {
         timerEl.textContent = '';
         clearInterval(timeInterval);
-        displayMessage();
       }
     }, 1000);
 }
  
 
-//for loop needs to increment each question by 1 to change Array index [0] to [1]... once next is clicked
+//for loop increments each question by 1 to change Array index and present next question.
 function showQuestions() {
     var question = document.querySelector(".question");
     var options = document.querySelector(".options");
-    question.innerHTML= questionsArr[0].question
-    options.innerHTML= ''
-    for (let i = 0; i < questionsArr[0].multChoice.length; i++) {options.innerHTML+= questionsArr[0].multChoice; [i]}
-}   
+    question.innerHTML= questionsArr[index].question
+    options.innerHTML= questionsArr[index].multChoice
+    for (let i = 0; i < questionsArr[index].multChoice.length; i++) {options.innerHTML + questionsArr[index].multChoice.length}
+}
+   
 
-//nextBtn progress through the questions
-nextBtn.onclick = ()=>{
-
+//nextBtn progress through the questions until last question
+nextBtn.onclick = (event)=>{
+    event.preventDefault();
+    index++
+    showQuestions();
+    if (index <= 4) {
+        console.log(index);
+    }else {
+       showResult()
+    } 
+  
+}
+//Will allow user to see their score once they enter their initials
+function showResult(){
+    var userInitals = localStorage.getItem("userInitals");
+    
+    if(userInitals)
+    
+    userInitals = initals
 }
 
-//showResult function should allow user to input initals and score into local storage
+submitBtn.onclick = (event)=>{
+    event.preventDefault();
+    var initals = document.querySelector("#initals").value;
+    localStorage.setItem("initals", initals)
+    console.log(initals);
+    showResult();
+}
+

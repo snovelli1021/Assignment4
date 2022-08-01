@@ -18,12 +18,20 @@
 <!-- Creates the question boxes -->    
     <section class="quiz_box">
         <div class="question"></div>
-        <div class="options"></div>    
-        <div><button id="nextBtn" data-state="hidden">Next Question ></button></div>
+            <div class="options"></div>
+            <div><button id="nextBtn" data-state="hidden">Next Question ></button></div>
+        <div class="card">
+                <h2>Quiz Results History:</h2>
+                <p><strong>Please Add Your Initals:</strong> <span id="initals"></span></p>
+                <input type="text" id="userInitals" placeholder="_ _ "/>
+                <button id="submitBtn">Submit</button>
+            <h2>Results:</h2>
+            </div class="cardResults">
+            <p><span id="results"></span></p>
+        </div> 
     </section>   
-
+    
 
     <script src="./assets/script.js"></script>
-    <script src="./assets/questions.js"></script>
 </body>
 </html>
