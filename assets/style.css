@@ -38,7 +38,7 @@ button:hover {
 
 .quiz_box {
     width: 900px;
-    height: 650px;
+    height: 700px;
     border: 5px black;
     border-radius: 5px;
     background-color: #4CAF50;
@@ -51,7 +51,7 @@ button:hover {
 }
 
 #options {
-    background-color: white;
+    
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 16px;
@@ -61,7 +61,7 @@ button:hover {
     justify-content: space-between;  
 }
 
-#nextBtn {
+#options button {
     background-color:#468aca;
     border-radius: 5px;
     color: black;
@@ -69,7 +69,6 @@ button:hover {
     font-size: 20px;
     padding: 10px 10px;
     text-align: center;
-    float: right;
 }
 
 .card {

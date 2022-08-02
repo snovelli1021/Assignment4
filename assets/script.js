@@ -2,7 +2,6 @@ var startBtn = document.querySelector("#startBtn");
 var question = document.querySelector(".question");
 var options = document.querySelector("#options");
 var timerEl = document.getElementById("timer");
-var nextBtn =  document.getElementById("nextBtn");
 var index = 0;
 var userScore = 0;
 var submitBtn = document.getElementById("submitBtn");
@@ -95,7 +94,7 @@ function countdown() {
     }, 1000);
 }
  
-//Each question is displayed when nextBtn is clicked and each array index is presented as as a button.
+//The first questin is displayed when startBtn is clicked and each array index is presented as the multiple choice options
 function showQuestions() {
     var question = document.querySelector(".question");
     question.innerHTML= questionsArr[index].question
@@ -118,7 +117,9 @@ function userPick(event){
         alert("Correct");
         console.log("Correct Answers" + userScore);
     }else{
-        alert("Wrong Answer")
+        alert("Wrong Answer");
+        timeLeft= -3;
+        timerEl.textContent = "-3";
     }
     index++
     showQuestions();
@@ -129,7 +130,7 @@ function userPick(event){
     } 
 }
 
-//Will allow user to see their score once they enter their initials
+//Will allow user to see their score once they enter their initials. Doesn't work yet
 function showResult(){
     var userInitals = localStorage.getItem("userInitals");
     
@@ -146,4 +147,5 @@ submitBtn.onclick = (event)=>{
     showResult();
 }
 
-options.addEventListener("click", userPick) 
+options.addEventListener("click", userPick)
+
