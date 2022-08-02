@@ -7,9 +7,9 @@ Created a coding quiz that when you click the start quiz button you are presente
 *Local storage is not working to store initals and user's score
 
 Github Repo Link:
-
+https://github.com/snovelli1021/Assignment4
 
 Github Pages Link:
-
+https://snovelli1021.github.io/Assignment4/
 
 ![my screenshot](./assets/Screenshot.jpg)
