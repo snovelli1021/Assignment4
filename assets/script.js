@@ -1,10 +1,15 @@
 var startBtn = document.querySelector("#startBtn");
 var question = document.querySelector(".question");
-var options = document.querySelector(".options");
+var options = document.querySelector("#options");
 var timerEl = document.getElementById("timer");
 var nextBtn =  document.getElementById("nextBtn");
 var index = 0;
+var userScore = 0;
 var submitBtn = document.getElementById("submitBtn");
+var option1 = document.getElementById("option1");
+var option2 = document.getElementById("option2");
+var option3 = document.getElementById("option3");
+var option4 = document.getElementById("option4");
 
 
 // creating an array and passing the number, questions, options, and answers
@@ -12,7 +17,7 @@ let questionsArr = [
     {
     numb: 1,
     question: "What does HTML stand for?",
-    answer: "Hypertext Markup Language",
+    answer: "option3",
     multChoice: [
       "Hypertext Markdown Language",
       "Hypertext Multiple Language",
@@ -23,7 +28,7 @@ let questionsArr = [
     {
     numb: 2,
     question: "What does CSS stand for?",
-    answer: "Cascading Style Sheet",
+    answer: "option4",
     multChoice: [
       "Common Style Sheet",
       "Continuous Style Sheet",
@@ -34,7 +39,7 @@ let questionsArr = [
     {
     numb: 3,
     question: "What is an API?",
-    answer: "Application Programming Interface",
+    answer: "option1",
     multChoice: [
       "Application Programming Interface",
       "Application Programming Instructions",
@@ -45,7 +50,7 @@ let questionsArr = [
     {
     numb: 4,
     question: "In simple terms, what is Bootstrap?",
-    answer: "A CSS framework for developing web apps",
+    answer: "option1",
     multChoice: [
       "A CSS framework for developing web apps",
       "A type of Markup Language used to querry the DOM",
@@ -56,7 +61,7 @@ let questionsArr = [
     {
     numb: 5,
     question: "What are the four parts that make up the box model?",
-    answer: "Content, Padding, Border, Margin",
+    answer: "option2",
     multChoice: [
       "Content, Box, Canvas, Border",
       "Content, Padding, Border, Margin",
@@ -65,18 +70,6 @@ let questionsArr = [
     ]
   },
 ];
-
-//nextBtn.classList.remove("hidden");
-
-// I want to show the next button only after start quiz button is pressed  
-//if (element.matches(".nextBtn")) {
-    //var state = element.getAttribute("data-state");
-    //if (state === "hidden") {
-        //element.dataset.state ='visible'
-    //}else{ 
-//element.setAttribute("data-state", "hidden")
-   // }
-//}
 
 startBtn.onclick = (event)=>{
     event.preventDefault();
@@ -102,20 +95,31 @@ function countdown() {
     }, 1000);
 }
  
-
-//for loop increments each question by 1 to change Array index and present next question.
+//Each question is displayed when nextBtn is clicked and each array index is presented as as a button.
 function showQuestions() {
     var question = document.querySelector(".question");
-    var options = document.querySelector(".options");
     question.innerHTML= questionsArr[index].question
-    options.innerHTML= questionsArr[index].multChoice
-    for (let i = 0; i < questionsArr[index].multChoice.length; i++) {options.innerHTML + questionsArr[index].multChoice.length}
+    option1.innerHTML= questionsArr[index].multChoice[0]  
+    option2.innerHTML= questionsArr[index].multChoice[1]
+    option3.innerHTML= questionsArr[index].multChoice[2]
+    option4.innerHTML= questionsArr[index].multChoice[3]
 }
-   
 
-//nextBtn progress through the questions until last question
-nextBtn.onclick = (event)=>{
-    event.preventDefault();
+
+
+//Setting up userPick function
+function userPick(event){
+    console.log(event.target.id)
+    var userPick = event.target.id
+    var correctAnswer = questionsArr[index].answer
+
+    if (userPick === correctAnswer) {
+        userScore += 1;
+        alert("Correct");
+        console.log("Correct Answers" + userScore);
+    }else{
+        alert("Wrong Answer")
+    }
     index++
     showQuestions();
     if (index <= 4) {
@@ -123,8 +127,8 @@ nextBtn.onclick = (event)=>{
     }else {
        showResult()
     } 
-  
 }
+
 //Will allow user to see their score once they enter their initials
 function showResult(){
     var userInitals = localStorage.getItem("userInitals");
@@ -142,3 +146,4 @@ submitBtn.onclick = (event)=>{
     showResult();
 }
 
+options.addEventListener("click", userPick) 

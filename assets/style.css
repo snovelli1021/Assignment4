@@ -38,7 +38,7 @@ button:hover {
 
 .quiz_box {
     width: 900px;
-    height: 600px;
+    height: 650px;
     border: 5px black;
     border-radius: 5px;
     background-color: #4CAF50;
@@ -50,7 +50,8 @@ button:hover {
     font-weight: 600;
 }
 
-div.options {
+#options {
+    background-color: white;
     border-radius: 5px;
     padding: 8px 15px;
     font-size: 16px;
